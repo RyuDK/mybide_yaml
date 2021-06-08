@@ -1,0 +1,26 @@
+FROM ubuntu:latest
+  
+RUN apt-get update
+RUN apt-get install python3 -y 
+RUN apt-get install git -y
+RUN apt-get install pip -y
+RUN git clone 
+RUN pip install flask
+RUN pip install flask_migrate
+RUN pip install flask_wtf
+RUN pip install email_validator
+RUN pip install pymongo
+RUN pip install boto3
+RUN pip install pymysql
+RUN pip install findspark
+RUN pip install pyspark
+RUN pip install pandas
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Asia/Seoul
+RUN apt install openjdk-8-jdk -y
+
+WORKDIR /mybide_output/mybide_output
+
+ENTRYPOINT ["python3", "start_app.py"]
+
+EXPOSE 5000
